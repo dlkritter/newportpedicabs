@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneer Pedicab | Newport, RI</title>
+    <meta name="description" content="Pioneer Pedicab — Newport, Rhode Island's pedicab service. Rides, guided tours, and mobile advertising in downtown Newport.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --charcoal: #1C1C1C;
+            --dark: #2D2D2D;
+            --medium: #5A5A5A;
+            --light-gray: #E8E8E8;
+            --off-white: #F7F7F5;
+            --white: #FFFFFF;
+            --accent: #4A7C8F;
+            --accent-dark: #3A6373;
+            --rule: #C8C8C0;
+        }
+
+        body {
+            font-family: 'Libre Franklin', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 1.5rem 2.5rem;
+            border-bottom: 1px solid var(--light-gray);
+            background: var(--white);
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1.25rem;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .header h1 {
+            font-family: 'EB Garamond', serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--charcoal);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--medium);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 0.15rem;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.75rem;
+            font-family: 'Libre Franklin', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+        .btn-dark {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+        .btn-dark:hover { background: var(--accent-dark); }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1.5px solid var(--charcoal);
+        }
+        .btn-ghost:hover {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        /* ── CONTENT ── */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .section:last-of-type { border-bottom: none; }
+
+        .section-label {
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .section h2 {
+            font-family: 'EB Garamond', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            font-size: 0.95rem;
+            color: var(--medium);
+            line-height: 1.75;
+            max-width: 600px;
+        }
+
+        /* ── SERVICES LIST ── */
+        .services-list {
+            list-style: none;
+            margin-top: 1.25rem;
+        }
+
+        .services-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .services-list li:last-child { border-bottom: none; }
+
+        .service-num {
+            font-family: 'EB Garamond', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--accent);
+            line-height: 1;
+            min-width: 28px;
+            padding-top: 0.1rem;
+        }
+
+        .service-info h3 {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .service-info p {
+            font-size: 0.88rem;
+            color: var(--medium);
+            line-height: 1.6;
+        }
+
+        /* ── CONTACT FOOTER ── */
+        .contact-footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 1.5rem;
+        }
+
+        .contact-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        .contact-block {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .contact-block .section-label {
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-block a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            display: block;
+            transition: opacity 0.2s;
+        }
+        .contact-block a:hover { opacity: 0.7; }
+
+        .contact-block .detail {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .bottom-bar {
+            text-align: center;
+            padding: 1.25rem 1.5rem;
+            font-size: 0.75rem;
+            color: var(--rule);
+            letter-spacing: 0.05em;
+            background: var(--charcoal);
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .header { padding: 2.5rem 1.25rem 2rem; }
+            .logo { width: 120px; height: 120px; }
+            .header h1 { font-size: 1.6rem; }
+            .header-cta { flex-direction: column; width: 100%; max-width: 280px; }
+            .btn { justify-content: center; width: 100%; }
+            .content { padding: 0 1.25rem; }
+            .section { padding: 2.25rem 0; }
+            .contact-inner { flex-direction: column; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <img src="logo.JPEG" alt="Pioneer Pedicab — Newport, RI">
+    </div>
+    <h1>Pioneer Pedicab</h1>
+    <p class="subtitle">Newport, Rhode Island</p>
+    <div class="header-cta">
+        <a href="tel:+14015957808" class="btn btn-dark">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.55.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.55a1 1 0 01-.25 1.02l-2.2 2.22z"/></svg>
+            Call Now
+        </a>
+        <a href="sms:+14015957808" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            Text Us
+        </a>
+    </div>
+</div>
+
+<div class="content">
+    <div class="section">
+        <div class="section-label">Services</div>
+        <h2>What We Offer</h2>
+        <ul class="services-list">
+            <li>
+                <span class="service-num">01</span>
+                <div class="service-info">
+                    <h3>Pedicab Rides</h3>
+                    <p>Fast, fun transportation through downtown Newport. Skip the parking and the hills. Tips-based fares.</p>
+                </div>
+            </li>
+            <li>
+                <span class="service-num">02</span>
+                <div class="service-info">
+                    <h3>Guided Tours</h3>
+                    <p>See the mansions, the waterfront, and the historic streets from the best seat in town. Custom routes available for groups and events.</p>
+                </div>
+            </li>
+            <li>
+                <span class="service-num">03</span>
+                <div class="service-info">
+                    <h3>Mobile Advertising</h3>
+                    <p>Pedicab wraps and branded OOH media campaigns that put your message at eye level in front of Newport's millions of annual visitors. Reach out for rates.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-label">About</div>
+        <h2>Locally Owned. Locally Operated.</h2>
+        <p>Pioneer Pedicab is Newport's own pedicab service. We know the city, we know the streets, and we're out here every day of the season. Whether you need a ride, a tour, or a mobile advertising partner, we're the team to call.</p>
+    </div>
+</div>
+
+<div class="contact-footer">
+    <div class="contact-inner">
+        <div class="contact-block">
+            <div class="section-label">Call or Text</div>
+            <a href="tel:+14015551234">(401) 595-7808</a>
+        </div>
+        <div class="contact-block">
+            <div class="section-label">Email</div>
+            <a href="mailto:info@pioneerpedicab.com">pioneerpedicab@gmail.com</a>
+        </div>
+        <div class="contact-block">
+            <div class="section-label">Location</div>
+            <span class="detail">Downtown Newport, RI</span>
+        </div>
+        <div class="contact-block">
+            <div class="section-label">Season</div>
+            <span class="detail">April &ndash; October</span>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-bar">
+    &copy; 2026 Pioneer Pedicab &middot; Newport, Rhode Island
+</div>
+
+</body>
+</html>
